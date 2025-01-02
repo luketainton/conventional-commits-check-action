@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: https://git.tainton.uk/actions/conventional-commits-docker-action@v1.0.0
+      - uses: https://git.tainton.uk/actions/conventional-commits-check-action@v1.0.0
         with:
           commit-message: ${{ github.event.pull_request.title }}
 ```
@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: https://git.tainton.uk/actions/conventional-commits-docker-action@v1.0.0
+      - uses: https://git.tainton.uk/actions/conventional-commits-check-action@v1.0.0
         with:
           commit-message: ${{ github.event.head_commit.message }}
 ```
