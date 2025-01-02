@@ -1,12 +1,10 @@
-# Container image that runs your code
-FROM alpine:3.21
+FROM gitea/runner-images:ubuntu-latest
 
-# Install python/pip
+LABEL maintainer="Luke Tainton <luke@tainton.uk>"
+
 ENV PYTHONUNBUFFERED=1
-RUN apk add --update --no-cache python3 && \
-    ln -sf python3 /usr/bin/python && \
-    python3 -m ensurepip && \
-    pip3 install --no-cache --upgrade pip setuptools conventional-pre-commit
+RUN python3 -m pip install --no-cache --upgrade pip && \
+    python3 -m pip install --no-cache conventional-pre-commit==4.0.0
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
