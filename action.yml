@@ -1,0 +1,11 @@
+name: 'Conventional Commits Check'
+description: 'A GitHub/Gitea Action for enforcing adherance to Conventional Commits.'
+inputs:
+  commit-message:  # id of input
+    description: 'Commit message, PR title, etc. to check'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.commit-message }}
