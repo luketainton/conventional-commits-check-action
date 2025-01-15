@@ -8,7 +8,6 @@ on:
 jobs:
   create_release:
     name: Create Release
-    needs: test
     uses: https://git.tainton.uk/actions/gha-workflows/.gitea/workflows/create-release.yml@main
     secrets:
       ACTIONS_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
