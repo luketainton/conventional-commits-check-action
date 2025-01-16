@@ -1,10 +1,9 @@
-FROM gitea/runner-images:ubuntu-latest
+FROM git.tainton.uk/public/runner-ubuntu-custom:latest
 
 LABEL maintainer="Luke Tainton <luke@tainton.uk>"
 
 ENV PYTHONUNBUFFERED=1
-RUN python3 -m pip install --no-cache --upgrade pip && \
-    python3 -m pip install --no-cache conventional-pre-commit==4.0.0 --break-system-packages
+RUN pipx install conventional-pre-commit==4.0.0
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
