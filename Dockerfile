@@ -1,4 +1,4 @@
-FROM git.tainton.uk/public/runner-ubuntu-custom:latest
+FROM git.tainton.uk/repos/runner-ubuntu-custom:latest
 
 LABEL maintainer="Luke Tainton <luke@tainton.uk>"
 
